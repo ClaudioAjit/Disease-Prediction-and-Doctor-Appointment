@@ -16,7 +16,7 @@ import { createStackNavigator, createSwitchNavigator, createAppContainer } from 
 import DropdownMenu from 'react-native-dropdown-menu';
 import { Dropdown } from 'react-native-material-dropdown';
 import DatePicker from 'react-native-datepicker'
-//import{ScrollView} from 'react-native-gesture-handler'
+
 
 export default class Register extends React.Component {
   
@@ -31,128 +31,12 @@ export default class Register extends React.Component {
       //   isLoggingIn: false,
       //   message: ''
        };
-       displayacoountForm = (text) => {   
-        var data = [{
-          value: 'male',
-        }, {
-          value: 'Female',
-        }, {
-          value: 'Hemai',
-        }];
-        switch (text) {
-          case 'User':
-            return (
-              <View>
-              <TextInput 
-                  style={[styles.inputbox,{marginTop:10}]}               
-                    placeholder="Put UserId"                    
-                    //    underlineColorAndroid="transparent"
-                    numberOfLines={1}
-                    onChangeText={password => this.setState({ password })}
-                  />
-              <Dropdown  
-                  bgColor={'white'}                                
-                  label='Choose gender'
-                  data={data}
-                />
-                 <DatePicker
-                        style={{marginTop:5,width:250}}
-                        bgColor={'white'}
-                        date={this.state.date}
-                        mode="date"
-                        placeholder="Select Date of birth"
-                        format="YYYY-MM-DD"
-                        minDate="2000-01-01"
-                        maxDate="2016-06-01"
-                        confirmBtnText="Confirm"
-                        cancelBtnText="Cancel"
-                        customStyles={{
-                          dateIcon: {
-                            position: 'absolute',
-                            left: 0,
-                            top: 4,
-                            marginLeft: 0
-                          },
-                          dateInput: {
-                            marginLeft: 36
-                          }
-                          // ... You can check the source to find the other keys.
-                        }}
-                        onDateChange={(date) => {this.setState({date: date})}}
-                      />             
-              </View>
-            );
-          case 'Doctor':
-            return (
-              <View>
-                  <TextInput 
-                  style={[styles.inputbox,{marginTop:10}]}               
-                    placeholder="Enter License no"                    
-                    //    underlineColorAndroid="transparent"
-                    numberOfLines={1}
-                    onChangeText={password => this.setState({ password })}
-                  />
-                  <TextInput 
-                  style={[styles.inputbox,{marginTop:10}]}               
-                    placeholder=" Put Speciality"                    
-                    //    underlineColorAndroid="transparent"
-                    numberOfLines={1}
-                    onChangeText={password => this.setState({ password })}
-                  />
-                  
-                    <Dropdown
-                        bgColor={'white'}                                                      
-                        label='Choose gender'
-                        data={data}
-                      /> 
-                    
-                    <DatePicker
-                        style={{marginTop:5,width:200}}
-                        bgColor={'white'}
-                        date={this.state.date}
-                        mode="date"
-                        placeholder="Select Date of birth"
-                        format="YYYY-MM-DD"
-                        minDate="2000-01-01"
-                        maxDate="2016-06-01"
-                        confirmBtnText="Confirm"
-                        cancelBtnText="Cancel"
-                        customStyles={{
-                          dateIcon: {
-                            position: 'absolute',
-                            left: 0,
-                            top: 4,
-                            marginLeft: 0
-                          },
-                          dateInput: {
-                            marginLeft: 36
-                          }
-                          // ... You can check the source to find the other keys.
-                        }}
-                        onDateChange={(date) => {this.setState({date: date})}}
-                      />             
-                  </View>
-            );
-          case 'Clinic':
-            return (
-              <TextInput
-                style={[styles.inputbox]}
-                placeholder="Enter clinic pan no."
-                //    underlineColorAndroid="transparent"
-                numberOfLines={1}
-                onChangeText={phn => this.setState({ phn })}
-              />
-            );
-          default:
-            return undefined
-        }
-      };
-       
+      
     render() {
-      var data = [["User","Doctor", "Clinic"]]
+     // var data = [["User","Doctor", "Clinic"]]
       
       return (
-        <ScrollView style={[{backgroundColor:'#60a370'}]}>
+        <ScrollView style={[{backgroundColor:'#91dbb0'}]}>
         <View style={styles.container}>  
           <View style={[styles.container1]}>
              <Image
@@ -166,14 +50,14 @@ export default class Register extends React.Component {
                 placeholder="Enter your Name"
                 //    underlineColorAndroid="transparent"                        
                   numberOfLines = {1}
-                  borderBottomColor='#3e3a42'
+                  
                   onChangeText={(username) => this.setState({ username })}
                 />
                 <TextInput style={[styles.inputbox,{marginTop:10}]}
                 placeholder="Enter username"
                 //    underlineColorAndroid="transparent"                        
                   numberOfLines = {1}
-                  borderBottomColor='#3e3a42'
+                  
                   onChangeText={(username) => this.setState({ userno })}
                 />
                 <TextInput style={[styles.inputbox,{marginTop:10}]}
@@ -194,50 +78,26 @@ export default class Register extends React.Component {
                 placeholder="Enter E-mail"
                 //    underlineColorAndroid="transparent"                        
                   numberOfLines = {1}
-                  borderBottomColor='#3e3a42'
+                  
                   onChangeText={(username) => this.setState({ userno })}
                 />
                 <TextInput style={[styles.inputbox,{marginTop:10}]}
                 placeholder="put you password"
                 //    underlineColorAndroid="transparent"                        
                   numberOfLines = {1}
-                  borderBottomColor='#3e3a42'
+                  secureTextEntry={true}
                   onChangeText={(username) => this.setState({ userno })}
                 />
                 <TextInput style={[styles.inputbox,{marginTop:10}]}
                 placeholder="confirm password"
                 //    underlineColorAndroid="transparent"                        
                   numberOfLines = {1}
-                  borderBottomColor='#3e3a42'
+                  secureTextEntry={true}
                   onChangeText={(username) => this.setState({ userno })}
                 />
                 
                 </View>
-                <View style={[styles.container3]}>
-                <Text>create account as:</Text>
-                 <View style={{height: 10,width:200}} />
-                  <DropdownMenu
-                  //  style={[styles.dropwowncontainer]}
-                    bgColor={'white'}
-                    tintColor={'#666666'}
-                    activityTintColor={'green'}
-                    // arrowImg={}      
-                    // checkImage={}   
-                    // optionTextStyle={{color: '#333333'}}
-                    // titleStyle={{color: '#333333'}} 
-                    // maxHeight={300} 
-                    handler={(selection, row) => this.setState({text: data[selection][row]})}
-                    data={data}
-                  >
-          
-                    <View style={{flex: 1,justifyContent:'center',alignItems:'center'}}>
-                      
-                        {this.displayacoountForm(this.state.text)}
-                          
-                    </View>
-          
-                  </DropdownMenu>
-                  </View>
+                
                 <TouchableOpacity style={styles.loginButton} onPress={this._homePage}>               
                           
                             <Text >Submit</Text>
@@ -245,7 +105,7 @@ export default class Register extends React.Component {
               </TouchableOpacity>
               <View style={[styles.horizontalFlex]}>
                 <Text>Already have an account??</Text>
-                <TouchableOpacity onPress={this._registerPage}>
+                <TouchableOpacity onPress={this._loginPage}>
                             <View >                           
                               <Text style={[styles.text,{marginLeft:15}]}>Sign In</Text>
                               </View>
@@ -260,16 +120,21 @@ export default class Register extends React.Component {
   
     _homePage = async () => {
       // await AsyncStorage.setItem('userToken', 'abc');
-      this.props.navigation.navigate('Home');
+      this.props.navigation.navigate('HomeScreen');
     };
-  }
+  
+   _loginPage = async () => {
+    // await AsyncStorage.setItem('userToken', 'abc');
+    this.props.navigation.navigate('SignIn');
+  };
+}
  
 
   const styles = StyleSheet.create({
     text: {
       color: '#4d5454',
       fontWeight: 'bold',
-      fontSize: 25
+      fontSize: 20
      
      },
     container: {      
@@ -288,6 +153,10 @@ export default class Register extends React.Component {
           marginTop:60,
           justifyContent:'center',
           alignItems:'baseline'          
+              },
+              hflex:{
+                flexDirection:"row",
+                height:60
               },
     container1: {
       flex: 1,
@@ -321,8 +190,7 @@ export default class Register extends React.Component {
         justifyContent:'center',
         alignItems:'center'
     },
-    container2: {
-      backgroundColor:'#60a370',
+    container2: {      
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
@@ -344,9 +212,9 @@ export default class Register extends React.Component {
     },    
     inputbox:{
       width:250,
-      height:40,
-      backgroundColor:'#ffffff' ,
-      borderRadius:20,
-      textDecorationLine:'underline' ,          
+      height:40,     
+      marginTop:10,
+      marginLeft:15,
+      borderBottomWidth:2             
     },
   });

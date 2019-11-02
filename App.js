@@ -12,6 +12,8 @@ import { createStackNavigator, createSwitchNavigator, createAppContainer } from 
 import HomeScreen from './Components/HomeScreen';
 import SignInScreen from './Components/SignInScreen';
 import Register from './Components/Register';
+import Reminder from './Components/Reminder';
+import Settings from './Components/Setting';
 import AuthLoadingScreen from './Components/AuthLoadingScreen';
 
 const styles = StyleSheet.create({
@@ -22,8 +24,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const AppStack = createStackNavigator({ Home: HomeScreen, Register: Register });
-const AuthStack = createStackNavigator({ SignIn: SignInScreen });
+const AppStack = createStackNavigator({ Home: HomeScreen, Reminder:Reminder,Setting:Settings });
+const AuthStack = createStackNavigator({ SignIn: SignInScreen, Register: Register  });
 
 export default createAppContainer(createSwitchNavigator(
   {

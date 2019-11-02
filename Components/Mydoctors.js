@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button,TextInput } from 'react-native';
 
 
-export default class Home extends React.Component {
+export default class Mydoctors extends React.Component {
     static navigationOptions = {
         title: 'Home',
         headerTitleStyle: {
@@ -21,7 +21,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <View style={styles.container}>                
-                <Text>home after tab here.</Text>
+                <Text>my doctors here.</Text>
             </View>
         );
     }
